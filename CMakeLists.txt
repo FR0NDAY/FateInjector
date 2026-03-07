@@ -12,7 +12,7 @@ add_subdirectory(src)
 
 SET_TARGET_PROPERTIES(fateInjector PROPERTIES LINK_FLAGS "/level='requireAdministrator' /uiAccess='false'") # requireAdministrator
 
-add_subdirectory(wxWidgets-3.2.0)
+add_subdirectory(wxWidgets-3.3.2)
 
 target_link_libraries(fateInjector wx::net wx::core wx::base)
 
