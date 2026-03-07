@@ -116,24 +116,26 @@ std::wstring config::makeConfig()
 
 void config::analyseState()
 {
-    if (name == "customProcName")
+    if (name == L"customProcName")
     {
         customProcName = analyseBool();
     }
-    else if (name == "delaystr")
+    else if (name == L"delaystr")
     {
         delaystr = value;
     }
-    else if (name == "dllPath")
+    else if (name == L"dllPath")
     {
         dllPath = value;
     }
-    else if (name == "procName")
+    else if (name == L"procName")
     {
         procName = value;
     }
     else
     {
-        wxMessageBox("\"" + name + "\" Is not a known Entry\nDeleting the config file might help!", "Fate Config WARNING", wxICON_INFORMATION);
+        wxMessageBox(wxString::Format(L"\"%ls\" Is not a known Entry\nDeleting the config file might help!", name.c_str()),
+                     L"Fate Config WARNING",
+                     wxICON_INFORMATION);
     }
 }
