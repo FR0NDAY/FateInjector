@@ -1,7 +1,7 @@
 # Fate Injector
 The Fate Client themed UWP app DLL Injector.
 
-Latest Injector [Download](https://github.com/FR0NDAY/FateInjector/releases/download/fateinj349/fateInjector.exe)
+Latest Injector [Download](https://github.com/fligger/FateInjector/releases/latest/download/FateInjector.exe)
 
 Get Fate Client DLL on the Fate Client [Repository](https://github.com/fligger/FateClient)
 
@@ -9,16 +9,17 @@ Get Fate Client DLL on the Fate Client [Repository](https://github.com/fligger/F
 #### BUT this injector does not contain any viruses! Feel free to check the source!
 
 ## Features:
-- Auto Inject
-- Automaticly adds the "All Applications Packages" Permission to the dll so UWP apps can load the dll.
+- Auto inject
+- Adds the "All Applications Packages" permission to the DLL so UWP apps can load it
+- Rust-only codebase and build pipeline
 
 Scuffed Youtube Devlog (Version 0.9) [here](https://www.youtube.com/watch?v=_50QBD4pKEs&list=PLVRYtYhvPXj5J6IwIFAAFO8CrpgmsLFki&index=4)
 
-## Troubleshooting:
-VCRUNTIME140_1.dll not found:
-1. Go to [https://support.microsoft.com/en-us/help/2977003](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)
-2. Scroll down and download the x64: vc_redist.x64.exe
-3. Run the exe and install it
-4. Fate Injector should open now
+## Build (Rust)
+1. Install Rust (stable): https://rustup.rs
+2. Run: `cargo build --release`
+3. Executable output: `target/release/fateInjector.exe`
 
-#### UI is implemented with native Win32 controls (no vendored UI framework).
+## GitHub Actions
+The workflow in `.github/workflows/build-windows.yml` builds and uploads:
+- `target/release/fateInjector.exe`
