@@ -16,7 +16,7 @@ Scuffed Youtube Devlog (Version 0.9) [here](https://www.youtube.com/watch?v=_50Q
 
 ## Troubleshooting:
 VCRUNTIME140_1.dll not found:
-1. Go to https://support.microsoft.com/en-us/help/2977003
+1. Go to [https://support.microsoft.com/en-us/help/2977003](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist)
 2. Scroll down and download the x64: vc_redist.x64.exe
 3. Run the exe and install it
 4. Fate Injector should open now
