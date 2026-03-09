@@ -13,30 +13,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Configure CMake
-        run: cmake -S . -B build
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
 
       - name: Build Release
-        run: cmake --build build --config Release --parallel
-
-      - name: Collect executable
-        shell: pwsh
-        run: |
-          New-Item -ItemType Directory -Force -Path out | Out-Null
-
-          if (Test-Path "build/Release/fateInjector.exe") {
-            Copy-Item "build/Release/fateInjector.exe" "out/fateInjector.exe" -Force
-          }
-          elseif (Test-Path "build/fateInjector.exe") {
-            Copy-Item "build/fateInjector.exe" "out/fateInjector.exe" -Force
-          }
-          else {
-            Write-Error "fateInjector.exe not found in expected build paths."
-          }
+        run: cargo build --release
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: fateInjector-windows-exe
-          path: out/fateInjector.exe
+          path: target/release/fateInjector.exe
           if-no-files-found: error
