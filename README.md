@@ -21,4 +21,4 @@ VCRUNTIME140_1.dll not found:
 3. Run the exe and install it
 4. Fate Injector should open now
 
-#### This project uses [wxWidgets](https://wxwidgets.org).
+#### UI is implemented with native Win32 controls (no vendored UI framework).
